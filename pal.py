@@ -1,4 +1,4 @@
-# palindrome.py
+# pal.py
 
 import sys
 
@@ -8,13 +8,18 @@ def is_palindrome(s):
     return s == s[::-1]
 
 if __name__ == "__main__":
-    # If a command-line argument is provided, use it
+    # Default string if no input is provided
+    default_string = "madam"
+
+    # Check if a string parameter is passed via command-line
     if len(sys.argv) > 1:
         user_input = sys.argv[1]
     else:
-        # Otherwise, prompt the user
-        user_input = input("Enter a string: ")
+        # Use default string if no parameter provided
+        user_input = default_string
+        print(f"No input parameter provided. Using default string: '{user_input}'")
 
+    # Check palindrome
     if is_palindrome(user_input):
         print(f"'{user_input}' is a palindrome.")
     else:
